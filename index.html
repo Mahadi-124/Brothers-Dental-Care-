@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brothers Dental Care — Premium Dental Care in Mirpur</title>
+    <meta
+      name="description"
+      content="Brothers Dental Care is a premium dental clinic in Mirpur, Dhaka offering cosmetic, orthodontic, surgery and emergency care."
+    />
+    <style>
+      :root {
+        --deep-blue: #0b3d91;
+        --clean-white: #ffffff;
+        --muted-purple: #7b61ff;
+        --muted-gray: #6b7280;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        color: #0f1724;
+        background: var(--clean-white);
+        line-height: 1.6;
+      }
+      a { color: inherit; }
+      img { display: block; max-width: 100%; }
+      .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+
+      .site-header {
+        background: linear-gradient(90deg, rgba(11, 61, 145, 1), rgba(123, 97, 255, 0.08));
+        box-shadow: 0 4px 20px rgba(11, 61, 145, 0.06);
+      }
+      .topbar { padding: 8px 0; }
+      .nav-row { padding: 8px 0; }
+      .site-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand-group { display: flex; align-items: center; gap: 12px; }
+      .logo { width: 68px; height: auto; border-radius: 12px; }
+      .brand-name { font-size: 1.8rem; font-weight: 800; color: white; margin: 0; }
+      .brand-tag { font-size: 0.95rem; color: rgba(255, 255, 255, 0.85); margin: 0; }
+      .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .contact-pill {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 10px 14px; border-radius: 999px; color: white; text-decoration: none;
+        background: rgba(255,255,255,0.15); backdrop-filter: blur(6px);
+      }
+      .contact-pill.whatsapp { background: #25D366; }
+      .nav-links { display: flex; flex-wrap: wrap; gap: 14px; }
+      .nav-links a { color: rgba(255,255,255,0.95); text-decoration: none; font-weight: 600; }
+
+      .hero-section { padding: 56px 0 42px; background: linear-gradient(180deg, #f6f8ff, #ffffff); }
+      .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; align-items: center; }
+      .eyebrow, .section-eyebrow {
+        display: inline-block; font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.18em;
+        color: var(--muted-purple); font-weight: 700; margin-bottom: 14px;
+      }
+      .hero-section h1 { font-size: 3rem; line-height: 1.04; max-width: 680px; margin: 0 0 20px; color: var(--deep-blue); }
+      .hero-section p { font-size: 1.05rem; line-height: 1.8; color: #475569; max-width: 640px; }
+      .hero-offer {
+        display: inline-block; margin: 24px 0; padding: 14px 18px; border-radius: 16px;
+        background: rgba(123, 97, 255, 0.12); color: var(--deep-blue); font-weight: 700;
+      }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+      .btn {
+        display: inline-block; padding: 12px 18px; border-radius: 12px; border: none;
+        text-decoration: none; font-weight: 700; cursor: pointer;
+      }
+      .btn.primary { background: linear-gradient(90deg, var(--deep-blue), var(--muted-purple)); color: white; }
+      .btn.outline { background: #eef2ff; color: var(--deep-blue); }
+      .btn.whatsapp { background: #25D366; color: white; }
+      .btn.small { padding: 10px 16px; font-size: 0.95rem; }
+      .trust-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
+      .trust-row div { background: white; border: 1px solid rgba(15, 23, 36, 0.06); border-radius: 16px; padding: 18px; }
+      .trust-row strong { display: block; font-size: 1rem; color: var(--deep-blue); margin-bottom: 6px; }
+      .hero-media img { width: 100%; border-radius: 26px; box-shadow: 0 24px 60px rgba(15, 23, 36, 0.12); }
+
+      .ticker-wrapper {
+        margin-top: 42px; padding: 18px 22px; border-radius: 18px;
+        background: linear-gradient(90deg, rgba(123,97,255,0.12), rgba(11,61,145,0.04)); overflow: hidden;
+      }
+      .ticker-track { display: flex; gap: 28px; white-space: nowrap; width: max-content; animation: scroll 30s linear infinite; }
+      .ticker-item { white-space: nowrap; color: #0f1724; font-weight: 700; }
+      @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+      .section-block { padding: 70px 0; }
+      .bg-soft { background: #f8f8ff; }
+      .section-header { display: grid; gap: 16px; margin-bottom: 32px; }
+      .section-header h2 { font-size: 2.2rem; line-height: 1.05; margin: 8px 0; color: var(--deep-blue); }
+      .section-copy { max-width: 680px; color: #475569; font-size: 1rem; line-height: 1.8; }
+      .card { background: white; border-radius: 24px; box-shadow: 0 18px 45px rgba(15, 23, 36, 0.08); padding: 24px; }
+      .grid { display: grid; gap: 20px; }
+      .service-grid, .review-grid, .availability-grid, .offer-grid, .faq-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .doctor-grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+      .service-alert { display: grid; gap: 12px; margin-bottom: 22px; padding: 24px; background: rgba(123,97,255,0.08); border: 1px solid rgba(123,97,255,0.18); border-radius: 24px; }
+      .service-alert strong { font-size: 1.05rem; color: var(--deep-blue); }
+      .service-card h3, .doctor-card h3, .offer-card h3, .faq-card h4 { margin-top: 0; color: var(--deep-blue); }
+      .service-card p, .doctor-card p, .review-card p, .offer-card p, .faq-card p, .slot-card p { color: #475569; line-height: 1.75; }
+      .service-intro { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: center; margin-bottom: 24px; }
+      .service-intro-image img { width: 100%; border-radius: 24px; box-shadow: 0 24px 50px rgba(15,23,36,0.1); }
+      .doctor-card { display: flex; gap: 14px; align-items: flex-start; }
+      .doctor-avatar { width: 108px; height: 108px; border-radius: 999px; object-fit: cover; box-shadow: 0 18px 35px rgba(15,23,36,0.16); flex-shrink: 0; }
+      .doctor-copy .doctor-title { color: var(--muted-purple); font-weight: 700; margin: 8px 0 8px; }
+      .slot-card h3 { margin: 0 0 10px; color: var(--deep-blue); }
+      .slot-card.full { opacity: 0.55; }
+      .offer-meta { margin-top: 18px; font-size: 0.95rem; color: var(--muted-gray); }
+      .review-card strong { display: block; margin-top: 18px; color: var(--deep-blue); }
+      .appointment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+      .appointment-copy { padding: 26px 28px; border-radius: 24px; background: white; box-shadow: 0 18px 45px rgba(15,23,36,0.08); }
+      .appointment-copy h2 { margin: 16px 0 20px; color: var(--deep-blue); }
+      .contact-list { display: grid; gap: 14px; margin-top: 24px; }
+      .contact-list div { display: grid; gap: 4px; }
+      .contact-list strong { font-weight: 700; color: #0f1724; }
+      .contact-list a { color: var(--deep-blue); text-decoration: none; }
+      .appointment-form { display: grid; gap: 16px; }
+      .appointment-form input, .appointment-form select, .appointment-form textarea {
+        width: 100%; padding: 12px; border-radius: 10px; border: 1px solid rgba(15,23,36,0.12); font-size: 1rem; background: white;
+      }
+      .appointment-form textarea { min-height: 118px; resize: vertical; }
+      .checkbox-label { display: flex; gap: 10px; align-items: start; color: #475569; font-size: 0.95rem; }
+      .form-success { color: #0f8554; margin-top: 8px; }
+      .form-error { color: #b91c1c; margin-top: 8px; }
+      .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; }
+      .map-card iframe { width: 100%; height: 100%; min-height: 320px; border: 0; border-radius: 20px; }
+      .site-footer { padding: 24px 0 48px; color: var(--muted-gray); }
+      .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
+      .footer-links { display: grid; gap: 10px; }
+      .footer-links a { color: #475569; text-decoration: none; }
+      .floating-whatsapp {
+        position: fixed; right: 18px; bottom: 110px; background: #25D366; border-radius: 999px;
+        box-shadow: 0 18px 35px rgba(15,23,36,0.18); padding: 14px 18px; z-index: 40;
+      }
+      .floating-whatsapp a { color: white; font-weight: 700; text-decoration: none; }
+
+      @media (max-width: 980px) {
+        .hero-grid, .service-intro, .appointment-grid, .contact-grid { grid-template-columns: 1fr; }
+        .section-header { margin-bottom: 20px; }
+      }
+      @media (max-width: 720px) {
+        .container { padding: 18px; }
+        .hero-section h1 { font-size: 2.15rem; }
+        .site-header .container { flex-direction: column; align-items: flex-start; gap: 12px; }
+        .hero-actions { flex-direction: column; }
+        .trust-row { grid-template-columns: 1fr; }
+        .contact-actions { flex-direction: column; align-items: flex-start; }
+        .doctor-card { flex-direction: column; }
+        .nav-links { gap: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="topbar container">
+        <div class="brand-group">
+          <img src="./public/logo-new.png" alt="Brothers Dental Care" class="logo" />
+          <div>
+            <p class="brand-name">Brothers Dental Care</p>
+            <p class="brand-tag">Mirpur Dental Care | Premium Clinic</p>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a href="tel:+8801851455146" class="contact-pill">📞 +880 1851 455146</a>
+          <a href="https://wa.me/8801851455146" class="contact-pill whatsapp">💬 +880 1851 455146</a>
+        </div>
+      </div>
+      <nav class="nav-row container">
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#doctors">Doctors</a>
+          <a href="#offers">Offers</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Premium Dental Care in Mirpur</span>
+            <h1>High-end dental care that feels calm, modern and trusted.</h1>
+            <p>
+              Brothers Dental Care brings premium oral health, orthodontics, and surgical expertise together in Mirpur, Dhaka.
+            </p>
+            <div class="hero-offer">
+              <strong>Current Offer:</strong> Exclusive care packages for new patients.
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="#appointment">Book a Visit</a>
+              <a class="btn outline" href="tel:01851455146">Call Now</a>
+              <a class="btn whatsapp" href="https://wa.me/8801851455146">WhatsApp</a>
+            </div>
+            <div class="trust-row">
+              <div>
+                <strong>5:00 PM - 10:00 PM</strong>
+                <span>Weekdays (closed Friday)</span>
+              </div>
+              <div>
+                <strong>Dhaka Dental College</strong>
+                <span>Affiliated Specialist Team</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="./public/outlook.png" alt="Brothers Dental Care clinic outlook" />
+          </div>
+        </div>
+        <div class="container ticker-wrapper">
+          <div class="ticker-track">
+            <span class="ticker-item">Same-day emergency appointments available</span>
+            <span class="ticker-item">Orthodontics and smile design</span>
+            <span class="ticker-item">Premium oral surgery and jaw care</span>
+            <span class="ticker-item">Gentle scaling and polishing</span>
+            <span class="ticker-item">Call or WhatsApp for support</span>
+            <span class="ticker-item">Same-day emergency appointments available</span>
+            <span class="ticker-item">Orthodontics and smile design</span>
+            <span class="ticker-item">Premium oral surgery and jaw care</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-block">
+        <div class="container">
+          <div class="service-alert">
+            <strong>Emergency Dental Care</strong>
+            <p>Urgent pain, injury or swelling? Request a same-day emergency appointment.</p>
+            <a href="#appointment" class="btn primary small">Request Emergency Visit</a>
+          </div>
+          <div class="service-intro">
+            <div>
+              <p class="section-eyebrow">Services</p>
+              <h2>Complete care for every dental need</h2>
+              <p class="section-copy">
+                From everyday hygiene to orthodontics and oral surgery, our team delivers calm, modern care.
+              </p>
+            </div>
+            <div class="service-intro-image">
+              <img src="./public/doctor-full.png" alt="Doctor full picture" />
+            </div>
+          </div>
+          <div class="grid service-grid">
+            <article class="card service-card">
+              <h3>Scaling & Polishing</h3>
+              <p>Gentle hygiene, deeper clean and long-lasting freshness.</p>
+            </article>
+            <article class="card service-card">
+              <h3>Root Canal Treatment</h3>
+              <p>Comfort-focused endodontic care for lasting relief.</p>
+            </article>
+            <article class="card service-card">
+              <h3>Braces & Orthodontics</h3>
+              <p>Smile shaping with braces and aligners.</p>
+            </article>
+            <article class="card service-card">
+              <h3>Oral & Maxillofacial Surgery</h3>
+              <p>Advanced surgery for jaw, facial trauma and oral cancer.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="doctors" class="section-block bg-soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">Our Doctors</p>
+              <h2>Specialists with real clinical experience</h2>
+            </div>
+            <p class="section-copy">Trusted specialists from Dhaka Dental College Hospital and Mirpur clinics.</p>
+          </div>
+          <div class="grid doctor-grid">
+            <article class="card doctor-card">
+              <img class="doctor-avatar" src="./public/doctor-male.png" alt="Dr. Mohammad Ataul Hasan (Rono)" />
+              <div class="doctor-copy">
+                <h3>Dr. Mohammad Ataul Hasan (Rono)</h3>
+                <p class="doctor-title">Consultant, Oral & Maxillofacial Surgery</p>
+                <p>BDS (Dhaka), BCS (Health), MS (Oral and Maxillofacial Surgery)</p>
+                <p>Specialty: Oral Cancer, Tumour & Jaw Fracture Treatment</p>
+              </div>
+            </article>
+            <article class="card doctor-card">
+              <img class="doctor-avatar" src="./public/doctor-female.png" alt="Dr. Shamima Akhter" />
+              <div class="doctor-copy">
+                <h3>Dr. Shamima Akhter</h3>
+                <p class="doctor-title">Orthodontist</p>
+                <p>BDS (Dhaka), FCPS</p>
+                <p>Specialty: Crooked teeth, braces, and smile alignment</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="availability" class="section-block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">Today’s Availability</p>
+              <h2>Available slots near you</h2>
+            </div>
+            <p class="section-copy">Select the best time and we will reserve your visit.</p>
+          </div>
+          <div class="grid availability-grid">
+            <div class="card slot-card">
+              <h3>5:00 PM – 6:00 PM</h3>
+              <p>Status: Available</p>
+              <p>Capacity: 2 • Booked: 0</p>
+            </div>
+            <div class="card slot-card">
+              <h3>6:00 PM – 7:00 PM</h3>
+              <p>Status: Limited</p>
+              <p>Capacity: 3 • Booked: 1</p>
+            </div>
+            <div class="card slot-card full">
+              <h3>7:00 PM – 8:00 PM</h3>
+              <p>Status: Full</p>
+              <p>Capacity: 2 • Booked: 2</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="offers" class="section-block bg-soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">Current Offers</p>
+              <h2>Special savings for your next visit</h2>
+            </div>
+            <p class="section-copy">Offers update directly from the clinic sheet.</p>
+          </div>
+          <div class="grid offer-grid">
+            <div class="card offer-card">
+              <h3>New Patient Welcome Package</h3>
+              <p>Free consultation and oral care guidance for first-time visitors.</p>
+              <div class="offer-meta">Valid until 30 September 2026</div>
+            </div>
+            <div class="card offer-card">
+              <h3>Orthodontic Consultation Offer</h3>
+              <p>Complimentary smile analysis for braces and aligner patients.</p>
+              <div class="offer-meta">Valid every weekday evening</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="section-block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">Reviews</p>
+              <h2>Patients trust our care</h2>
+            </div>
+            <p class="section-copy">Real reviews from families and patients in Mirpur.</p>
+          </div>
+          <div class="grid review-grid">
+            <div class="card review-card">
+              <p>“Very professional and gentle service. The doctors made every step easy.”</p>
+              <strong>— Farhana, patient</strong>
+            </div>
+            <div class="card review-card">
+              <p>“The clinic is calm and modern. I felt confident with the treatment plan.”</p>
+              <strong>— Rahim, patient</strong>
+            </div>
+            <div class="card review-card">
+              <p>“I received excellent orthodontic care and clear guidance for my braces.”</p>
+              <strong>— Noor, patient</strong>
+            </div>
+            <div class="card review-card">
+              <p>“Fast emergency response and reassuring treatment during an injury.”</p>
+              <strong>— Javed, patient</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="appointment" class="section-block bg-soft">
+        <div class="container appointment-grid">
+          <div class="appointment-copy">
+            <p class="section-eyebrow">Appointment</p>
+            <h2>Reserve your visit in minutes</h2>
+            <p>Fill a short request. We will contact you on call or WhatsApp to confirm.</p>
+            <div class="contact-list">
+              <div>
+                <strong>Address</strong>
+                <span>6/Ka, 1/1, (2nd Floor), Mirpur, Dhaka-1216</span>
+              </div>
+              <div>
+                <strong>Hours</strong>
+                <span>5:00 PM - 10:00 PM, closed Friday</span>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <span><a href="tel:01851455146">01851-455146</a></span>
+              </div>
+            </div>
+          </div>
+          <form class="appointment-form" id="appointmentForm">
+            <input name="fullName" type="text" placeholder="Full Name" required />
+            <input name="phone" type="tel" placeholder="Phone Number" required />
+            <select name="service" required>
+              <option value="">Select Service</option>
+              <option>Scaling</option>
+              <option>Polishing</option>
+              <option>Root Canal Treatment</option>
+              <option>Orthodontic Treatment</option>
+              <option>Jaw & Facial Surgery</option>
+            </select>
+            <input name="date" type="date" />
+            <select name="time">
+              <option value="">Preferred Time</option>
+              <option>5:00 PM – 6:00 PM</option>
+              <option>6:00 PM – 7:00 PM</option>
+              <option>7:00 PM – 8:00 PM</option>
+            </select>
+            <textarea name="note" placeholder="Brief note or problem description"></textarea>
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              I agree to be contacted via call or WhatsApp by Brothers Dental Care.
+            </label>
+            <button type="submit" class="btn primary">Send Request</button>
+            <p id="formMessage" class="form-success" hidden>Your request was received. We will contact you shortly.</p>
+          </form>
+        </div>
+      </section>
+
+      <section id="faq" class="section-block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="section-eyebrow">FAQ</p>
+              <h2>Common questions answered</h2>
+            </div>
+          </div>
+          <div class="grid faq-grid">
+            <div class="card faq-card">
+              <h4>What are the visiting hours?</h4>
+              <p>5:00 PM to 10:00 PM, closed on Fridays.</p>
+            </div>
+            <div class="card faq-card">
+              <h4>Do you accept emergency dental appointments?</h4>
+              <p>Yes. Emergency dental care is available for pain, injury and swelling.</p>
+            </div>
+            <div class="card faq-card">
+              <h4>Can I book orthodontic treatment on my first visit?</h4>
+              <p>Yes. We start with a consultation and treatment plan on your first appointment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-block bg-soft">
+        <div class="container contact-grid">
+          <div class="card contact-card">
+            <h2>Find us in Mirpur 2</h2>
+            <p>6/Ka, 1/1, (2nd Floor), Mirpur, Dhaka-1216 (South Gate of National Cricket Stadium)</p>
+            <p>Call or WhatsApp for directions and appointments.</p>
+            <a href="https://wa.me/8801851455146" class="btn whatsapp">WhatsApp</a>
+          </div>
+          <div class="card map-card">
+            <iframe
+              title="Brothers Dental Care map"
+              src="https://maps.google.com/maps?q=23.8054362,90.3647411&z=17&output=embed"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Brothers Dental Care</strong>
+          <p>Premium dental care in Mirpur with expert doctors, trusted service and modern comfort.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="floating-whatsapp">
+      <a href="https://wa.me/8801851455146">WhatsApp</a>
+    </div>
+
+    <script>
+      const form = document.getElementById('appointmentForm');
+      const message = document.getElementById('formMessage');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        message.hidden = false;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
